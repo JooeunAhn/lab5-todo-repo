@@ -26,5 +26,4 @@ EXPOSE 8000
 WORKDIR /lab5
 # Set the default command to execute
 # when creating a new container
-# i.e. using Flask to serve the application
-CMD python manage.py runserver 0.0.0.0:8000
+CMD python3 manage.py runserver 0.0.0.0:8000
