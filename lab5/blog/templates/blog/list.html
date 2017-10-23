@@ -1,0 +1,8 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<a href="{% url 'add' %}">add todo</a>
+{% for todo in todo_list %}
+<p>TODO_CONTENT: {{todo.content}} <a href="{% url 'edit' todo.pk %}">edit</a> <a href="{% url 'delete' todo.pk %}">delete</a></p>   
+{% endfor %}
+{% endblock %}
