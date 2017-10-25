@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'blog',
 
     #THIRD PARTY
-    'bootstrap3'
+    'bootstrap3',
+    'django_slack',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +128,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+SLACK_TOKEN = "xoxp-256862048263-256893319734-262634767430-bb4d42e7bc68855b75250c5b18dd0610"
+SLACK_CHANNEL = "#todo"
+SLACK_USERNAME = "joon_bot"

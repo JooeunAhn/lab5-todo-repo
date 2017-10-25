@@ -3,6 +3,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .forms import TodoForm
 from .models import Todo
 
+from django_slack import slack_message
+
 # Create your views here.
 
 def index(request):
@@ -16,7 +18,9 @@ def todo_add(request):
     if request.method == "POST":
         form = TodoForm(request.POST)
         if form.is_valid():
-            form.save()
+            todo = form.save(commit=False)
+            slack_message('blog/message.slack', {"message": todo.content}) 
+            todo.save()
             return redirect('list')
     else:
         form = TodoForm()
